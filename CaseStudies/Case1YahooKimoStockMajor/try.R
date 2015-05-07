@@ -13,7 +13,7 @@ html <- htmlParse(content(res, "text", encoding = "big5"), encoding = "utf8")
 
 
 # Parser
-library(stringr)
+# library(stringr)
 
 tables <- readHTMLTable(html)
 
@@ -35,9 +35,13 @@ View(data_table)
 
 # extract date info
 DataString_source = content(res, "text", encoding = "big5")
-DataString_regexp <- "([[:digit:]]{3}) /([[:digit:]]{2}) /([[:digit:]]{2})"
-DataString_Location = str_locate_all(DataString_source,DataString_regexp)[[1]]
-DataString = str_sub(DataString_source, DataString_Location[1],DataString_Location[2])
+# DataString_regexp <- "([[:digit:]]{3}) /([[:digit:]]{2}) /([[:digit:]]{2})"
+# DataString_Location = str_locate_all(DataString_source,DataString_regexp)[[1]]
+# DataString = str_sub(DataString_source, DataString_Location[1],DataString_Location[2])
+DateString = regmatches(DataString_source,regexpr("([0-9]+) /([0-9]+) /([0-9]+)",DataString_source))
+DateVector = as.numeric(unlist(strsplit(DateString,split = " /")))
+DateVector[1] = DateVector[1] + 1911
+DataDate = as.Date(paste(DateVector,collapse = "-"))
 
 # change the data type of each column
 Data_Table = data_table
@@ -63,7 +67,7 @@ Data_Table <- rbind(Data_Table[,1:3],Data_Table[,5:7])
 names(Data_Table)
 names(Data_Table)[2:3]<-c("Buy","Sell")
 
-One_Stock_ID = "2451"
-Data_Table = data.frame(StockId=One_Stock_ID,DateStr=DataString,Data_Table)
+stockId = "2451"
+Data_Table = data.frame(StockId=stockId,Date=DataDate,Data_Table)
 
 View(Data_Table)

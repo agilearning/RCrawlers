@@ -1,5 +1,5 @@
 .RData
 .Rhistory
-
-
+*.db
+*.sqlite
 
