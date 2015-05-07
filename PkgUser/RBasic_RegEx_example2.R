@@ -33,3 +33,7 @@ unlist(regmatches(resStr,matches))
 # [chinese character] try6:
 matches = gregexpr("台北市?萬華[\u4E00-\u9FA5]+",resStr)
 unlist(regmatches(resStr,matches))
+
+# [chinese character] try7: NOT
+matches = gregexpr("[^\u4E00-\u9FA5]+",resStr)
+unlist(regmatches(resStr,matches))
