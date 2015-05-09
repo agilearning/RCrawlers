@@ -10,4 +10,4 @@ sub("[^\\]]*$","",sub("^[^\\[]*","",resStr))
 jsonDataString = sub("[^\\]]*$","",sub("^[^\\[]*","",resStr))
 
 jsonData = fromJSON(jsonDataString)
-View(data.frame(jsonData))
+View(data.frame(do.call(rbind,jsonData)))
