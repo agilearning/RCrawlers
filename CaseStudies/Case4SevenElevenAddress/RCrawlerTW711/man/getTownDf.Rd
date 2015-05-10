@@ -9,4 +9,9 @@ getTownDf(cityCodes)
 \description{
 getTownDf via POST cityCodes
 }
+\examples{
+cityCodeDf = getCityCodes()
+townDf = getTownDf(cityCodeDf$cityCode)
+View(townDf)
+}
 

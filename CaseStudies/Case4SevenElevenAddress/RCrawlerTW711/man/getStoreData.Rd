@@ -9,4 +9,14 @@ getStoreData(cityName, townName)
 \description{
 getStoreData via POST cityName and townName
 }
+\examples{
+cityCodeDf = getCityCodes()
+townDf = getTownDf(cityCodeDf$cityCode)
+testTownDf = townDf[,c("cityName","TownName")][1:10,]
+listOfData = apply(testTownDf,1,function(x){
+   print(getStoreData(x[1],x[2]))
+})
+totalDf = do.call(rbind,listOfData)
+View(totalDf)
+}
 

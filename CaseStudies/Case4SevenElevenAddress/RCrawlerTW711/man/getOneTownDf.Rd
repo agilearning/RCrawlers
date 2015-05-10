@@ -9,4 +9,7 @@ getOneTownDf(cityCode)
 \description{
 getOneTownDf via POST cityid
 }
+\examples{
+View(getOneTownDf("01"))
+}
 

@@ -43,6 +43,9 @@ getCityCodes = function(){
 #' 
 #' getOneTownDf via POST cityid
 #' 
+#' @examples
+#' View(getOneTownDf("01"))
+#' 
 #' @export
 getOneTownDf = function(cityCode){
   # function input: cityCode
@@ -73,6 +76,11 @@ getOneTownDf = function(cityCode){
 #' 
 #' getTownDf via POST cityCodes
 #' 
+#' @examples
+#' cityCodeDf = getCityCodes()
+#' townDf = getTownDf(cityCodeDf$cityCode)
+#' View(townDf)
+#' 
 #' @export
 getTownDf = function(cityCodes){
   # function input: cityCodes
@@ -94,6 +102,16 @@ getTownDf = function(cityCodes){
 #' getStoreData via POST cityName and townName
 #' 
 #' getStoreData via POST cityName and townName
+#' 
+#' @examples
+#' cityCodeDf = getCityCodes()
+#' townDf = getTownDf(cityCodeDf$cityCode)
+#' testTownDf = townDf[,c("cityName","TownName")][1:10,]
+#' listOfData = apply(testTownDf,1,function(x){
+#'    print(getStoreData(x[1],x[2]))
+#' })
+#' totalDf = do.call(rbind,listOfData)
+#' View(totalDf)
 #' 
 #' @export
 getStoreData = function(cityName, townName){
