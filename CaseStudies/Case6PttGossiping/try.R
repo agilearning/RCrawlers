@@ -83,4 +83,20 @@ pushDf = data.frame(postId = postData$postId,
                     do.call(rbind,pustData),stringsAsFactors = FALSE)
 
 
+####################################################
+# getPostList via GET Method with cookie
+####################################################
+
+boardName = "Gossiping"
+boardUrl = sprintf("https://www.ptt.cc/bbs/%s/index.html",boardName)
+res <- GET(boardUrl,set_cookies(over18=1))
+node = content(res, encoding = "utf8")
+
+node[cssToXpath("div.btn-group.pull-right > a")]
+xmlAttrs(node[cssToXpath("div.btn-group.pull-right > a")])
+strsplit(xmlAttrs(node[cssToXpath("div.btn-group.pull-right > a")][[2]])["href"],split = "index")
+maxPage = as.numeric(gsub(".html","",unlist(strsplit(xmlAttrs(node[cssToXpath("div.btn-group.pull-right > a")][[2]])["href"],split = "index"))[2]))
+
+allPages = 1:maxPage
+
 
