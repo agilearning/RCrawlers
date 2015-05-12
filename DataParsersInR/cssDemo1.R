@@ -14,7 +14,15 @@ doc <- "<html>
 </html>"
 
 doc <- htmlParse(doc)
+doc
+
 # Names of the characters
+doc[cssToXpath(".character>.name")]
 cssApply(doc, ".character>.name", cssCharacter)
+
+
 # Name of character1
+doc[cssToXpath("#character1>.name")]
 cssApply(doc, "#character1>.name", cssCharacter)
+
+

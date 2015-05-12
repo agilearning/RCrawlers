@@ -2,6 +2,7 @@
 
 # Parser
 library(CSS)
+
 doc <- '<dd class="c2f">
 <b class="sp">24小時到貨</b>
 <h5>
@@ -15,4 +16,7 @@ doc <- '<dd class="c2f">
 
 
 doc <- htmlParse(doc)
+doc
+
+doc[cssToXpath("h5>a")]
 cssApply(doc, "h5>a", cssCharacter)

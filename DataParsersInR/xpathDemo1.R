@@ -1,4 +1,4 @@
-library(CSS)
+library(XML)
 
 doc <- "<html>
 <head></head>
@@ -24,4 +24,6 @@ xpathApply(doc,"//*[@class='name']",xmlValue)
 unlist(xpathApply(doc,"//*[@class='name']",xmlValue))
 
 # compare with css selector
+library(CSS)
+doc[cssToXpath(".name")]
 cssApply(doc, ".name", cssCharacter)

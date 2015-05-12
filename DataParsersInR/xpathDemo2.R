@@ -17,5 +17,8 @@ doc <- '<dd class="c2f">
 doc <- htmlParse(doc)
 
 # extract data via xpath and css
+doc["//h5/a"]
+cssToXpath("h5>a")
+
 xmlValue(doc["//h5/a"][[1]])
 cssApply(doc, "h5>a", cssCharacter)

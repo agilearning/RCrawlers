@@ -8,6 +8,10 @@ class(content(res))
 
 node <- content(res)
 node["//book"]
+
+library(CSS)
+cssToXpath("book")
+
 # `[`(node,"//book")
 xmlToDataFrame(node["//book"][-3])
 
