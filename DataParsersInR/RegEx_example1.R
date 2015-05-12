@@ -1,4 +1,6 @@
 
+library(httr)
+
 res = GET("http://www.319papago.idv.tw/lifeinfo/tkkinc-02.html")
 resStr = content(res,as = "text")
 

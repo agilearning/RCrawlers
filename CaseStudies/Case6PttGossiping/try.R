@@ -84,7 +84,7 @@ pushDf = data.frame(postId = postData$postId,
 
 
 ####################################################
-# getPostList via GET Method with cookie
+# getListPageUrls via GET Method with cookie
 ####################################################
 
 boardName = "Gossiping"
@@ -93,10 +93,24 @@ res <- GET(boardUrl,set_cookies(over18=1))
 node = content(res, encoding = "utf8")
 
 node[cssToXpath("div.btn-group.pull-right > a")]
-xmlAttrs(node[cssToXpath("div.btn-group.pull-right > a")])
+xmlAttrs(node[cssToXpath("div.btn-group.pull-right > a")][[2]])
 strsplit(xmlAttrs(node[cssToXpath("div.btn-group.pull-right > a")][[2]])["href"],split = "index")
 maxPage = as.numeric(gsub(".html","",unlist(strsplit(xmlAttrs(node[cssToXpath("div.btn-group.pull-right > a")][[2]])["href"],split = "index"))[2]))
 
-allPages = 1:maxPage
+allListPages = c("",1:maxPage)
+allListUrls = sapply(allListPages,function(page){
+  sprintf("https://www.ptt.cc/bbs/%s/index%s.html",boardName,page)
+})
 
 
+####################################################
+# getPostUrls via GET Method with cookie
+####################################################
+
+listPageUrl = allListUrls[10]
+res <- GET(listPageUrl,set_cookies(over18=1))
+node = content(res, encoding = "utf8")
+node[cssToXpath(".title a")]
+postUrls = cssApply(node,".title a",function(node){
+  sprintf("https://www.ptt.cc%s",xmlAttrs(node)["href"])
+})

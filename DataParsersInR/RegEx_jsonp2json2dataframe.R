@@ -8,6 +8,7 @@ sub("[^\\}]*$","",resStr)
 sub("[^\\}]*$","",sub("^[^\\{]*","",resStr))
 jsonDataString = sub("[^\\}]*$","",sub("^[^\\{]*","",resStr))
 
+library(rjson)
 jsonData = fromJSON(jsonDataString)
 
 View(data.frame(do.call(rbind,jsonData$data$away$skaters$player)))
