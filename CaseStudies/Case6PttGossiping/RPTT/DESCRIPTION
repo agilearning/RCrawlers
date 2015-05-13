@@ -1,6 +1,6 @@
 Package: RPTT
 Type: Package
-Title: a PTT crawler package
+Title: web-based PTT crawler package
 Version: 0.0.1
 Date: 2015-05-12
 Author: Chia-Chi Chang<c3h3.tw@gmail.com>, Chih-Cheng Liang<chihchengliang@gmail.com>
