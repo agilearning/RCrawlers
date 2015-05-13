@@ -4,14 +4,14 @@
 # getListPageUrls via boardName
 ####################################################
 
-#' title: getListPageUrls via boardName 
+#' getListPageUrls
 #' 
-#' des: getListPageUrls via boardName 
+#' Get urls of the list pages, each contains certain posts of the input board.
 #' 
-#' @param boardName blablabla
+#' @param boardName The name of a board.
 #' @examples
 #' listPageUrls = getListPageUrls("Gossiping")[1:5]
-#' View(listPageUrls)
+#' listPageUrls
 #' @export
 getListPageUrls = function(boardName){  
   # function input: boardName
@@ -38,15 +38,15 @@ getListPageUrls = function(boardName){
 # getPostUrls via listPageUrl
 ####################################################
 
-#' title: getPostUrls via listPageUrl
+#' getPostUrls
 #' 
-#' des: getPostUrls via listPageUrl 
+#' Get urls of posts that listed in the list page.
 #' 
-#' @param listPageUrl blablabla
+#' @param listPageUrl The url of the list page.
 #' @examples
 #' listPageUrls = getListPageUrls("Gossiping")[1:5]
 #' postUrls = unlist(lapply(listPageUrls,getPostUrls))
-#' View(postUrls)
+#' postUrls
 #' @export
 getPostUrls = function(listPageUrl){
   # function input: listPageUrl
@@ -67,11 +67,11 @@ getPostUrls = function(listPageUrl){
 # getPostData via postUrl
 ####################################################
 
-#' title: getPostData via postUrl
+#' getPostData
 #' 
-#' des: getPostData via postUrl
+#' Get the content of the post.
 #' 
-#' @param postUrl blablabla
+#' @param postUrl The url of the post.
 #' @examples
 #' getPostData("https://www.ptt.cc/bbs/Gossiping/M.1431338763.A.1BF.html")
 #' @export
