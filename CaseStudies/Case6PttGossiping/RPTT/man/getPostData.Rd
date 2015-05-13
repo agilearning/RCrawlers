@@ -2,15 +2,15 @@
 % Please edit documentation in R/RPTT.R
 \name{getPostData}
 \alias{getPostData}
-\title{title: getPostData via postUrl}
+\title{getPostData}
 \usage{
 getPostData(postUrl)
 }
 \arguments{
-\item{postUrl}{blablabla}
+\item{postUrl}{The url of the post.}
 }
 \description{
-des: getPostData via postUrl
+Get the content of the post.
 }
 \examples{
 getPostData("https://www.ptt.cc/bbs/Gossiping/M.1431338763.A.1BF.html")

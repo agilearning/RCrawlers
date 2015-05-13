@@ -2,18 +2,18 @@
 % Please edit documentation in R/RPTT.R
 \name{getListPageUrls}
 \alias{getListPageUrls}
-\title{title: getListPageUrls via boardName}
+\title{getListPageUrls}
 \usage{
 getListPageUrls(boardName)
 }
 \arguments{
-\item{boardName}{blablabla}
+\item{boardName}{The name of a board.}
 }
 \description{
-des: getListPageUrls via boardName
+Get urls of the list pages, each contains certain posts of the input board.
 }
 \examples{
 listPageUrls = getListPageUrls("Gossiping")[1:5]
-View(listPageUrls)
+listPageUrls
 }
 

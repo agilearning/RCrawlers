@@ -2,19 +2,19 @@
 % Please edit documentation in R/RPTT.R
 \name{getPostUrls}
 \alias{getPostUrls}
-\title{title: getPostUrls via listPageUrl}
+\title{getPostUrls}
 \usage{
 getPostUrls(listPageUrl)
 }
 \arguments{
-\item{listPageUrl}{blablabla}
+\item{listPageUrl}{The url of the list page.}
 }
 \description{
-des: getPostUrls via listPageUrl
+Get urls of posts that listed in the list page.
 }
 \examples{
 listPageUrls = getListPageUrls("Gossiping")[1:5]
 postUrls = unlist(lapply(listPageUrls,getPostUrls))
-View(postUrls)
+postUrls
 }
 
