@@ -12,6 +12,7 @@
 #' @examples
 #' listPageUrls = getListPageUrls("Gossiping")[1:5]
 #' listPageUrls
+#' @import httr CSS XML
 #' @export
 getListPageUrls = function(boardName){  
   # function input: boardName
@@ -47,6 +48,7 @@ getListPageUrls = function(boardName){
 #' listPageUrls = getListPageUrls("Gossiping")[1:5]
 #' postUrls = unlist(lapply(listPageUrls,getPostUrls))
 #' postUrls
+#' @import httr CSS XML
 #' @export
 getPostUrls = function(listPageUrl){
   # function input: listPageUrl
@@ -74,6 +76,7 @@ getPostUrls = function(listPageUrl){
 #' @param postUrl The url of the post.
 #' @examples
 #' getPostData("https://www.ptt.cc/bbs/Gossiping/M.1431338763.A.1BF.html")
+#' @import httr CSS XML
 #' @export
 getPostData = function(postUrl){
   # function input: postUrl

@@ -3,3 +3,6 @@
 export(getListPageUrls)
 export(getPostData)
 export(getPostUrls)
+import(CSS)
+import(XML)
+import(httr)
