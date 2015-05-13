@@ -10,6 +10,8 @@ postUrls = unlist(lapply(listPageUrls,getPostUrls))
 postUrls
 
 getPostData("https://www.ptt.cc/bbs/Gossiping/M.1431338763.A.1BF.html")
+
+
 getPostData(postUrls[2])
 postData = lapply(postUrls[3:5],getPostData)
 
