@@ -1,5 +1,6 @@
 
 library(httr)
+library(XML)
 
 postBody = paste(c("content=",URLencode("今天天氣很好"),Sys.time()),collapse = "")
 
