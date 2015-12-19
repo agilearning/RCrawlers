@@ -10,7 +10,7 @@ for(a in 1:length(addr_tw))
   
   FM_store <- GET(FM_URL, config = set_cookies('ServerName'='www%2Efamily%2Ecom%2Etw;',
                                              "ASPSESSIONIDSQDBRTSD"="PLBKNCAGIGAKILIPJALCPKK;",
-                                             "ASP.NET_SessionId"="nnhplttz2ofmvfypfbsuyo0f") 
+                                             "ASP.NET_SessionId"="nnhplttz2ofmvfypfbsuyo0f"), 
                   add_headers("Referer" = "http://www.family.com.tw/marketing/inquiry.aspx"))
   
   FM_store_list <- content(FM_store, type="text", encoding = "utf8")
